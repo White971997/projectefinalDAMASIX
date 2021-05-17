@@ -9,7 +9,9 @@ echo '
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <!-- el meu css -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/stylepopup.css">
+    <!--el meu js-->
+    <script src="../js/popup.js"></script>
     <title>Pacients</title>
 </head>
 <body>
@@ -21,6 +23,7 @@ echo '
     function veurepacients()
     {
         $cBarri = $_GET['CodiPostalBarri'];
+
         
         // Variables connexió MySQL
 	$host = "localhost";
@@ -32,7 +35,7 @@ echo '
     $connect = mysqli_connect ($host, $user, $pass, $db) or die ("Error de Connexió");
             
     // Sentencia SQL a executar
-    $sentenciasql = "SELECT * FROM pacients WHERE codiPostal = '$cBarri'; ";
+    $sentenciasql = "SELECT * FROM pacients INNER JOIN vacunes ON pacients.idVacuna = vacunes.idVacuna WHERE codiPostal = '$cBarri'; ";
     
     $sql= mysqli_query($connect, $sentenciasql);
 
@@ -73,7 +76,7 @@ echo '
                         <td>'.$mostrar['CodiPostal'].'</td>
                         <td>'.$mostrar['DataPrimeraDosi'].'</td>
                         <td>'.$mostrar['DataSegonaDosi'].'</td>
-                        <td>'.$mostrar['idVacuna'].'</td>
+                        <td>'.$mostrar['NomVacuna'].'</td>
                         <td>'.$mostrar['Observacions'].'</td>
                         <td style="color: blue;" >
                             <a href="editPacients.php?idPacient='.$mostrar['idPacient'].'">
@@ -84,15 +87,17 @@ echo '
                             </a>
                         </td> 
                         <td style="color: red;" >
+                        <button onclick="myFunction()" id='.$mostrar['idPacient'].'">
                             <a href="deletePacients.php?idPacient='.$mostrar['idPacient'].'" style="color:red;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16">
                                     <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
                                     <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                                 </svg>
                             </a>
+                        </button>
                       </td>                        
                 </tr>
-                
+                   
                 ';
 
     }
@@ -112,8 +117,17 @@ function get_format($df) {
     
 }
 echo '
-            
-        
+
+<div class="popup-wrapper">
+<div class="popup">
+    <div onclick="cerrarPopUp()" class="popup-close">x</div>
+    <div class="popup-content">
+        <h5>Segur que vols eliminar aquest pacient?</div></h5>
+        <button type="button" class="btn btn-success">Si</button>                          
+        <button onclick="cerrarPopUp()" type="button" class="btn btn-danger">No</button>
+    </div>
+</div>
+</div>
 </body>
 </html>
 ';

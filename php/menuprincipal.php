@@ -10,6 +10,9 @@ echo '
     <title>Barris</title>
 </head>
 <body>
+<a href = "Pacients/formularisPacients/afegirPacientForm.php">
+<button type="button" class="btn btn-success">Afegir usuari</button>
+</a>
 <div class="row">
 ';
 
@@ -47,7 +50,7 @@ echo '
                     <h5 class="card-title">'.$mostrar['nomBarri'].'</h5>
                     <p class="card-text">'.$mostrar['codiPostal'].' - '.$mostrar['Poblacio'].' </p>
                     
-                    <a href="veurePacients.php?CodiPostalBarri='.$mostrar['codiPostal'].'" class="btn btn-primary">Veure llistat</a>
+                    <a href="Pacients/veurePacients.php?CodiPostalBarri='.$mostrar['codiPostal'].'" class="btn btn-primary">Veure llistat</a>
                 </div>
             </div>
             </div>

@@ -47,15 +47,15 @@ while($mostrar=mysqli_fetch_array($sql)){
         <div class="row">
             <div class="col">
             <label for="exampleInputEmail1">Nom del Pacient</label>
-            <input type="text" class="form-control" value = '.$mostrar['NomPacient'].' style="width: 70%";>
+            <input type="text" class="form-control" value =" '.$mostrar['NomPacient'].'"style="width: 70%";>
             </div>
             <div class="col">
             <label for="exampleInputEmail1">Cognoms del pacient</label>
-            <input type="text" class="form-control" value = '.$mostrar['CognomsPacient'] .'>
+            <input type="text" class="form-control" value = "'. $mostrar['CognomsPacient'] .'">
             </div>
             <div class="col">
             <label for="exampleInputEmail1">DNI/NIE</label>
-            <input type="text" class="form-control" value = '.$mostrar['DNI'].'>
+            <input type="text" class="form-control" value = "'.$mostrar['DNI'].'">
             </div>
         </div>
         <br>
@@ -66,11 +66,31 @@ while($mostrar=mysqli_fetch_array($sql)){
             </div>
             <div class="col">
             <label for="exampleInputEmail1">Direcció</label>
-            <input type="text" class="form-control" value = '.$mostrar['Direccio'].'>
+            <input type="text" class="form-control" value = "'.$mostrar['Direccio'].'">
             </div>
             <div class="col">
             <label for="exampleInputEmail1">Codi Postal</label>
-            <input type="text" class="form-control" value = '.$mostrar['CodiPostal'].'>
+            <input type="text" class="form-control" value = "'.$mostrar['CodiPostal'].'">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+            <label for="exampleInputEmail1">Vacuna</label>
+            <select class="form-select" aria-label="Default select example">
+                <option >Open this select menu</option>
+                <option value="'.$mostrar['idVacuna'].'">'.$mostrar['NomVacuna'].'</option>
+                
+            </select>
+            </div>
+            <div class="col">
+            <label for="exampleInputEmail1">Data 1ª dosis</label>
+            <input type="date" class="form-control" value = '.$mostrar['DataPrimeraDosi'].' style="width: 60%;">
+            </div>
+            
+            <div class="col">
+            <label for="exampleInputEmail1">Data 2ª Dosis</label>
+            <input type="date" class="form-control" value = '.$mostrar['DataSegonaDosi'].' style="width: 60%;">
             </div>
         </div>
     </form>

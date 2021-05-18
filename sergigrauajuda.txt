@@ -1,0 +1,4 @@
+injecció SQL 
+injecció XSS --> 
+injecció classics, problemes de versió server apache 
+ exploits sobre el sistemes --> widnows 7 y pujar-la a server(

@@ -29,8 +29,8 @@ function editPacient()
 $sentenciasql = "UPDATE pacients SET NomPacient= '$nom', CognomsPacient = '$cognoms', DNI = '$dni', DataNaixament ='$dataNaixament', Direccio ='$direccio', CodiPostal = '$codiPostal',
 DataPrimeraDosi ='$dataPrimeraDosi', DataSegonaDosi ='$dataSegonaDosi', Observacions = '$observacions'
 WHERE pacients.idPacient = '$idPacient'; ";
-echo $sentenciasql;
-$sql= mysqli_query($connect, $sentenciasql);        
 
+$sql= mysqli_query($connect, $sentenciasql);        
+header('Location: ../menuprincipal.html');
 }
 ?>

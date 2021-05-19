@@ -19,7 +19,7 @@
         // Sentencia SQL a executar
         $sentenciasql = "DELETE FROM users WHERE idUser = '$idUserBorrar'; ";
         $sql= mysqli_query($connect, $sentenciasql);
-        header('Location: veureUsuari.php;
+        header('Location: veureUsuari.php');
         
         
         

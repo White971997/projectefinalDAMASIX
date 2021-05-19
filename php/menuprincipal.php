@@ -11,8 +11,9 @@ echo '
 </head>
 <body>
 <a href = "Pacients/formularisPacients/afegirPacientForm.php">
-<button type="button" class="btn btn-success">Afegir usuari</button>
+<button type="button" class="btn btn-success">Afegir Pacient</button>
 </a>
+
 <div class="row">
 ';
 
@@ -69,7 +70,7 @@ echo '
     }
     echo '
             
-        
+        <a href="Usuaris/veureUsuari.php" class="btn btn-primary">Veure users</a>
         </body>
         </html>
         ';

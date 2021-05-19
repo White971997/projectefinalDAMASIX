@@ -23,7 +23,7 @@ recollirDades();
     
 function recollirDades()
 {
-    $idPacient = $_GET['idPacient'];
+    $idUser = $_GET['idUser'];
 
     
 // Variables connexió MySQL
@@ -36,7 +36,7 @@ $error = "";
 $connect = mysqli_connect ($host, $user, $pass, $db) or die ("Error de Connexió");
         
 // Sentencia SQL a executar
-$sentenciasql = "SELECT * FROM pacients INNER JOIN vacunes ON pacients.idVacuna = vacunes.idVacuna WHERE idPacient = '$idPacient'; ";
+$sentenciasql = "SELECT * FROM users WHERE idUser = '$idUser'; ";
 
 $sql= mysqli_query($connect, $sentenciasql);
 
@@ -44,64 +44,54 @@ $rowCount = mysqli_num_rows($sql);
 while($mostrar=mysqli_fetch_array($sql)){
     echo '
     <div class="container">
-    <form action="../editPacient.php" method="POST" name="editpacient">
+    <form action="../editUsuari.php" method="POST" name="editusuari">
         <div class="row">
             <div class="col">
-                <label for="exampleInputEmail1">ID Pacient</label>
-                <input type="text" readonly="readonly" class="form-control" name= "idP" value =" '.$mostrar['idPacient'].'"style="width: 30%";>
+                <label for="exampleInputEmail1">ID Usuari</label>
+                <input type="text" readonly="readonly" class="form-control" name="idU" value = '.$mostrar['idUser'].' style="width: 30%" >
             </div>
             <div class="col">
-                <label for="exampleInputEmail1">Nom del Pacient</label>
-                <input type="text" class="form-control" name="nomP" value =" '.$mostrar['NomPacient'].'"style="width: 70%";>
+                <label for="exampleInputEmail1">Nom Usuari</label>
+                <input type="text" class="form-control" name="nomU" value = '.$mostrar['Nom'].'>
             </div>
             <div class="col">
-                <label for="exampleInputEmail1">Cognoms del pacient</label>
-                <input type="text" class="form-control" name = "cognomsP" value = "'. $mostrar['CognomsPacient'] .'">
+                <label for="exampleInputEmail1">Cognoms Usuari</label>
+                <input type="text" class="form-control" name="cognomsU" value = '.$mostrar['Cognoms'].'>
             </div>
+
+        </div>
+        <br>
+        <div class="row">
             <div class="col">
                 <label for="exampleInputEmail1">DNI/NIE</label>
-                <input type="text" class="form-control" name = "dniP"  value = "'.$mostrar['DNI'].'">
+                <input type="text" class="form-control" name="dniU" value = '.$mostrar['DNI'].'>
             </div>
-        </div>
-        <br>
-        <div class="row">
             <div class="col">
                 <label for="exampleInputEmail1">Data de naixament</label>
-                <input type="date" class="form-control" name = "dataNaixamentP" value = '.$mostrar['DataNaixament'].' style="width: 60%;">
+                <input type="date" class="form-control" name="dataNaixamentU" style="width: 60%;" value = '.$mostrar['DataNaixament'].'>
             </div>
             <div class="col">
-                <label for="exampleInputEmail1">Direcció</label>
-                <input type="text" class="form-control" name = "direccioP" value = "'.$mostrar['Direccio'].'">
+                <label for="exampleInputEmail1">Data de Registre</label>
+                <input type="date" class="form-control" name="dataRegistreU" style="width: 60%;" value = '.$mostrar['DataRegistro'].'>
             </div>
-            <div class="col">
-                <label for="exampleInputEmail1">Codi Postal</label>
-                <input type="text" class="form-control" name = " codiPostalP" value = "'.$mostrar['CodiPostal'].'">
-            </div>
+
         </div>
         <br>
         <div class="row">
             <div class="col">
-                <label for="exampleInputEmail1">Vacuna</label>
-                <select class="form-select" aria-label="Default select example" disabled>
-                    <option selected name = " '.$mostrar['idVacuna'].'" value="'.$mostrar['idVacuna'].'">'.$mostrar['NomVacuna'].'</option>
-                </select>
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control" name="emailU" value = '.$mostrar['Email'].'>
             </div>
             <div class="col">
-                <label for="exampleInputEmail1">Data 1ª dosis</label>
-                <input type="date" class="form-control" name = "dPrimeraDosiP" value = '.$mostrar['DataPrimeraDosi'].' style="width: 60%;">
+                <label for="exampleInputEmail1">Nom usuari</label>
+                <input type="text" class="form-control" name="usernameU" value = '.$mostrar['Username'].' >
             </div>
             <div class="col">
-                <label for="exampleInputEmail1">Data 2ª Dosis</label>
-                <input type="date" class="form-control" name = "dSegonaDosiP" value = '.$mostrar['DataSegonaDosi'].' style="width: 60%;">
+                <label for="exampleInputEmail1">Contrasenya Usuari</label>
+                <input type="password" class="form-control" name="contrasenyaU" value = '.$mostrar['Contrasenya'].' >
             </div>
         </div>
-        <br>
-        <div class="row">
-            <div class="col">
-                <label for="exampleFormControlTextarea1">Observacions</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" name = "obsP" value = "'.$mostrar['Observacions'].'" rows="3">'.$mostrar['Observacions'].'</textarea>
-            </div>
-        </div>
+
         <br>
         <button type="submit" class="btn btn-success">Modifica</button>
     </form>

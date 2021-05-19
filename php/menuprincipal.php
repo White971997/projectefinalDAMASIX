@@ -10,9 +10,38 @@ echo '
     <title>Barris</title>
 </head>
 <body>
-<a href = "Pacients/formularisPacients/afegirPacientForm.php">
-<button type="button" class="btn btn-success">Afegir Pacient</button>
-</a>
+<div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="../../menuprincipal.php">Inici</a>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Veure
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="../veureUsuari.php">Veure Usuaris</a>
+                            <a class="dropdown-item" href="../../menuprincipal.php">Veure Pacients</a>
+
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Afegir
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="../formUsuaris/afegirUsuariForm.html">Afegir Usuaris</a>
+                            <a class="dropdown-item" href="../../Pacients/formularisPacients/afegirPacientForm.php">Afegir Pacients</a>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 
 <div class="row">
 ';

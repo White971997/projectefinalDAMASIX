@@ -31,7 +31,7 @@ $sentenciasql = "INSERT INTO `pacients` (`idPacient`, `NomPacient`, `CognomsPaci
 VALUES (NULL, '$nom', '$cognoms', '$dni', '$dataNaixament', '$direccio', '$codiPostal', '$dataPrimeraDosi', '$dataSegonaDosi', $idVacuna, '$observacions');";
 
 $sql= mysqli_query($connect, $sentenciasql);        
-header('Location: ../menuprincipal.html');
+header('Location: ../menuprincipal.php');
 
 }
 ?>

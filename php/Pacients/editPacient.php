@@ -31,6 +31,6 @@ DataPrimeraDosi ='$dataPrimeraDosi', DataSegonaDosi ='$dataSegonaDosi', Observac
 WHERE pacients.idPacient = '$idPacient'; ";
 
 $sql= mysqli_query($connect, $sentenciasql);        
-header('Location: ../menuprincipal.html');
+header('Location: ../menuprincipal.php');
 }
 ?>

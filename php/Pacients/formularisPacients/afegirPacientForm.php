@@ -44,7 +44,7 @@ $rowCount = mysqli_num_rows($sql);
 
     echo '
     <div class="container">
-    <form action="../afegirPacient.php" method="POST" name="editpacient">
+    <form action="../addPacient.php" method="POST" name="editpacient">
         <div class="row">
             <div class="col">
                 <label for="exampleInputEmail1">ID Pacient</label>
@@ -82,12 +82,12 @@ $rowCount = mysqli_num_rows($sql);
         <div class="row">
             <div class="col">
                 <label for="exampleInputEmail1">Vacuna</label>
-                <select class="form-select" aria-label="Default select example">
-                <option selected>Selecciona una vacuna...</option>';
-                
-                while($mostrar=mysqli_fetch_array($sql)){
-                    echo '<option name = "idVacunaP" value="'.$mostrar['idVacuna'].'">'.$mostrar['NomVacuna'].'</option>';
-                }
+                <select class="form-select" name = "idVacunaP" aria-label="Default select example">
+                    <option selected>Selecciona una vacuna...</option>';
+                    
+                    while($mostrar=mysqli_fetch_array($sql)){
+                        echo '<option name = "idVacunaPa" value="'.$mostrar['idVacuna'].'">'.$mostrar['NomVacuna'].'</option>';
+                    }
                 echo '  
                 </select>
             </div>

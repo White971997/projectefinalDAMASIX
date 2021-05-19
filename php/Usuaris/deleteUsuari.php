@@ -5,9 +5,7 @@
     
     function eliminarpacients()
     {
-        $idPacientBorrar = $_GET['idPacient'];
-        $cpostal = $_GET['coPostal'];
-        echo $cpostal;
+        $idUserBorrar = $_GET['idUser'];
         
         // Variables connexió MySQL
         $host = "localhost";
@@ -19,9 +17,9 @@
         $connect = mysqli_connect ($host, $user, $pass, $db) or die ("Error de Connexió");
                 
         // Sentencia SQL a executar
-        $sentenciasql = "DELETE FROM pacients WHERE idPacient = '$idPacientBorrar'; ";
+        $sentenciasql = "DELETE FROM users WHERE idUser = '$idUserBorrar'; ";
         $sql= mysqli_query($connect, $sentenciasql);
-        header('Location: veurePacients.php?CodiPostalBarri='.(string)$cpostal.'');
+        header('Location: veureUsuari.php;
         
         
         

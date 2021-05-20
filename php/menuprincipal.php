@@ -43,8 +43,8 @@ echo '
                             Afegir
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../Usuaris/formUsuaris/afegirUsuariForm.html">Afegir Usuaris</a>
-                            <a class="dropdown-item" href="../Pacients/formularisPacients/afegirPacientForm.php">Afegir Pacients</a>
+                            <a class="dropdown-item" href="Usuaris/formUsuaris/afegirUsuariForm.html">Afegir Usuaris</a>
+                            <a class="dropdown-item" href="Pacients/formularisPacients/afegirPacientForm.php">Afegir Pacients</a>
 
                         </div>
                     </li>

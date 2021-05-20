@@ -37,7 +37,7 @@ echo '
                             Veure
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../../Usuaris/veureUsuaris.php">Veure Usuaris</a>
+                            <a class="dropdown-item" href="../../Usuaris/veureUsuari.php">Veure Usuaris</a>
                             <a class="dropdown-item" href="../../menuprincipal.php">Veure Pacients</a>
 
                         </div>
@@ -48,7 +48,7 @@ echo '
                             Afegir
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../../formUsuaris/afegirUsuariForm.html">Afegir Usuaris</a>
+                            <a class="dropdown-item" href="../../Usuaris/formUsuaris/afegirUsuariForm.html">Afegir Usuaris</a>
                             <a class="dropdown-item" href="../formularisPacients/afegirPacientForm.php">Afegir Pacients</a>
 
                         </div>

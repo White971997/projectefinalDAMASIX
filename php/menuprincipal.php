@@ -109,7 +109,6 @@ echo '
     }
     echo '
             
-        <a href="Usuaris/veureUsuari.php" class="btn btn-primary">Veure users</a>
         </body>
         </html>
         ';

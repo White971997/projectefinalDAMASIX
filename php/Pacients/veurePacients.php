@@ -27,7 +27,7 @@ echo '
 <body>
 <div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="../../menuprincipal.php">Inici</a>
+            <a class="navbar-brand" href="../menuprincipal.php">Inici</a>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
@@ -37,8 +37,8 @@ echo '
                             Veure
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../veureUsuari.php">Veure Usuaris</a>
-                            <a class="dropdown-item" href="../../menuprincipal.php">Veure Pacients</a>
+                            <a class="dropdown-item" href="../Usuaris/veureUsuari.php">Veure Usuaris</a>
+                            <a class="dropdown-item" href="../menuprincipal.php">Veure Pacients</a>
 
                         </div>
                     </li>
@@ -48,8 +48,8 @@ echo '
                             Afegir
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../formUsuaris/afegirUsuariForm.html">Afegir Usuaris</a>
-                            <a class="dropdown-item" href="../../Pacients/formularisPacients/afegirPacientForm.php">Afegir Pacients</a>
+                            <a class="dropdown-item" href="../Usuaris/formUsuaris/afegirUsuariForm.html">Afegir Usuaris</a>
+                            <a class="dropdown-item" href="../Pacients/formularisPacients/afegirPacientForm.php">Afegir Pacients</a>
 
                         </div>
                     </li>

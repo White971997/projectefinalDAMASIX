@@ -20,14 +20,14 @@
     $connect = mysqli_connect ($host, $user, $pass, $db) or die ("Error de Connexió");
             
     // Sentencia SQL a executar
-    $sentenciasql = "SELECT * FROM users where username = '".$mail."' and contrasenya = '".$passwd."' ;";
+    $sentenciasql = "SELECT * FROM users where username = '".$mail."';";
     $sql= mysqli_query($connect, $sentenciasql);
 
     $rowCount = mysqli_num_rows($sql);
     $mostrar=mysqli_fetch_array($sql);
     
 
-    if($rowCount>0){
+    if($mostrar['Contrasenya'] == $passwd){
 
         echo 'ok';
         header('Location: menuprincipal.php');
@@ -36,7 +36,6 @@
         $error ="Contrasenya mal fatal ";
         header('Location: ../index-mal.html');
     }
-    
     }
 
     

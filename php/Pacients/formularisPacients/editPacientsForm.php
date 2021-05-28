@@ -72,7 +72,7 @@ function recollirDades()
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db = "projectefinal";
+$db = "projectefinal"; 
 $error = "";
 // Realitzem la connexió amb la base de dades
 $connect = mysqli_connect ($host, $user, $pass, $db) or die ("Error de Connexió");

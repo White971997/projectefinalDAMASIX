@@ -14,6 +14,7 @@ function addPacient()
     $username = $_POST['usernameU'];
     $password = $_POST['contrasenyaU'];
     $email = $_POST['emailU'];
+    
 // Variables connexió MySQL
     $host = "localhost";
     $user = "root";

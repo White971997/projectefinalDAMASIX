@@ -3,3 +3,5 @@ contrasenyes encriptades
 injecció XSS --> 
 injecció classics, problemes de versió server apache 
  exploits sobre el sistemes --> widnows 7 y pujar-la a server(
+
+Exploits php apache  com saber la versió amb el f12 del naevagdor php injection com posar-ho 

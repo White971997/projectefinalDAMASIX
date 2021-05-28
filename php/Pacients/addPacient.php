@@ -4,10 +4,6 @@ addPacient();
     
 function addPacient()
 {
-    require_once("../class.inputfilter.php");
-    $ifilter = new InputFilter();
-    $observacions = $ifilter->process($_POST['obsP']);
-    echo $observacions;
 // Variables amb els camps del formulari
 $idVacuna = $_POST['idVacunaP'];
     
@@ -19,7 +15,7 @@ $idVacuna = $_POST['idVacunaP'];
     $dataNaixament = $_POST['dataNaixamentP'];
     $dataPrimeraDosi = $_POST['dPrimeraDosiP'];
     $dataSegonaDosi= $_POST['dSegonaDosiP'];
-   // $observacions = $_POST['obsP'];
+    $observacions = $_POST['obsP'];
 
 // Variables connexió MySQL
     $host = "localhost";

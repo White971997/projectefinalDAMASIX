@@ -4,12 +4,14 @@
     login();
     
     
+    
     function login()
     {
 
         // Variables amb els camps del formulari
 	$mail = $_POST['email'];
 	$passwd = $_POST['password'];
+       
         // Variables connexió MySQL
 	$host = "localhost";
 	$user = "root";
@@ -17,14 +19,22 @@
 	$db = "projectefinal";
     $error = "";
     // Realitzem la connexió amb la base de dades
-    $connect = mysqli_connect ($host, $user, $pass, $db) or die ("Error de Connexió");
+    $conn = mysqli_connect ($host, $user, $pass, $db) or die ("Error de Connexió");
             
     // Sentencia SQL a executar
-    $sentenciasql = "SELECT * FROM users where username = '".$mail."' and contrasenya ='".$passwd."';";
-    $sql= mysqli_query($connect, $sentenciasql);
+    //$sentenciasql = "SELECT * FROM users where username = '".$mail."' and contrasenya = '".$passwd."' ;";
+    //$sql= mysqli_query($connect, $sentenciasql);
 
-    $rowCount = mysqli_num_rows($sql);
-    $mostrar=mysqli_fetch_array($sql);
+    $sql = "SELECT * FROM users WHERE username=? and contrasenya =?"; // SQL with parameters
+    $stmt = $conn->prepare($sql); 
+
+    $stmt->bind_param("ss", $mail, $passwd);
+    $stmt->execute();
+    $result = $stmt->get_result(); 
+    $mostrar = $result->fetch_assoc(); 
+    $rowCount = mysqli_num_rows($result);
+
+    
     
     if($rowCount>0){
         echo 'ok';
@@ -40,14 +50,11 @@
         header('Location: menuprincipal.php');
        
     }else{
-        $error ="Contrasenya mal fatal ";
+        
+        echo 'Contrasenya mal fatal';
         header('Location: ../index-mal.html');
     }*/
-    }
-
     
-
-
-
+    }
 
 ?>
